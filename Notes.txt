@@ -1,0 +1,116 @@
+*** Initiation au réseau ***
+
+* modèle logique : pour modéliser le réseau
+* modèle physique : pour deployer le réseau
+
+* On a d'autres fabricants d'équipements réseau autres que Cisco Systems : Alcatel, Juniper, Aruba
+
+* openwrt.org : pour changer le firmware d'un équipement réseau
+
+* A part Cisco Packet Tracer, on a aussi : GNS3, plus complet mais plus complexe et nécessitant un ordinateur complexe
+
+* Très souvent câble réseau, câble RJ45, câble Ethernet, désigne le c$able à paire torsadée
+
+* commande ncpa.cpl dans 'Run' windows pour avoir les infos sur sa carte réseau.
+
+* Normes :
+	- IEEE 802.3 ou Ethernet : pour les cartes réseau Cuivre & Optique
+	- IEEE 802.11 : pour les cartes réseau sans fil
+	- IEEE 802 : norme pour les réseaux LAN et MAN
+	- Wi-FI = IEEE 802.11
+	
+* La sécurité dans le Wi-Fi est assurée par les mécanismes de chiffrements, utilisant  la clé de chiffrement de type WPA (Wi-Fi Protected Access)
+
+* 2 types de câbles à paire torsadée (8 fils) :
+	- câble croisé : pour les équipements de même type (PC-PC, PC-Serveur, ...)
+	- câble droits : pour les équipements de catégories différentes.
+
+* switch ou commutateur : 4 à 96 ports
+	- port RJ45 pour les câbles réseau
+	- port SFP+ pour la fibre optique
+	- débit : 10Gbp à 100 Gbp
+
+* hub = concentrateur
+
+* Routeur : pont entre réseaux
+	Ex: box internet pour un domicile ; ils ont aussi un switch
+
+* MAC: Media Acces Control, sur 6 bits de la forme a1a2:b1b2:c1c2:d1d2:e1e2:f1f2, où les ai,...,fi sont des nimbres hexadécimaux
+
+* PDU: Protocol Data Unit
+
+* ISO : International Standard Organisation
+
+* IP: sur 4 octets en décimal, permet de localiser géographiquement
+
+* Plan d'adressage: processus d'affectation des adresses IP aux machines d'un réseau.
+
+* Plage d'adresses: partie d'iP commune entre les machines d'un même réseau
+
+* Masque de sous réseau: nbre de bits identifiant un réseau, permet de connaitre la plage d'adresses IP des machines d'un même réseau
+
+* adresse réseau: plage d'adresse à laquelle on ajoute des 0.0...
+
+* Uniquement les machines d'un meme réseau sont autorisées à communiquer (avec même adresse réseau)
+
+* Dans une plage réseau, la 1ère est pour l'adresse réseau et la dernière est l'adresse de diffusion, permettant d'envoyer la même information à tous les machines du réseau au même moment (broadcast) 
+
+* IPV6: sur 128 bits (16 octets)
+
+* La table de routage est un tableau qui indique au routeur vers quel réseau envoyer un paquet, en fonction de son adresse IP de destination.
+
+* Vu la différence des équiemements réseau, on distingue des règles qui permettent la communication des informations entre eux.
+	- les règles matérielles sont appelées Normes
+	- celles logicielles sont appelées protocoles
+
+* protocole HTTP: dans la couche application du modèle OSI
+
+* OSI: Open Systems Interconnexion
+
+* DHCP: Dynamic Host Configuration Protocol
+
+* Le serveur DNS est utilisé principalement pour faciliter l’identification des machines qui hébergent des sites Internet ou autres services réseau. Nous reviendrons là-dessus dans le chapitre suivant.
+
+* nmcli con show (to show connection)
+
+* nmcli con show "name connection": to hava all infos on the given connection
+
+* pool d'adresses: plage d'adresses fournies par un server DHCP
+
+* serveur DNS: pour associer un nom d'hote ou de domaine à une adresse ip
+
+* Record ou enregistrement; entrée dans l'annuaire DNS
+
+* Lorsque vous configurez des noms de DNS, respectez la règle d’or suivante : ne mettez pas de caractères spéciaux, de majuscules ou d’espaces dans le nom de vos machines. Cela vous évitera bien des problèmes ! Vous pouvez consulter la norme officielle en anglais pour en savoir plus !
+
+*** Initiation à Packet Tracer ***
+
+* enable/disable sur IOS (de Packet Tracer) pour basculer entre les modes utilisateurs et superutilisateurs.
+
+* interface FastEthernet 0/1 : pour configurer ladite interface
+	- puis 'ip address [ip_adress] [mask]', pour donner une ip au dit port.
+	- 'no shutdown' pour péreniser cette configuration comme celle par défaut
+	- enfin 'exit' puis  'copy running-config startup-config' pour que les configurations effectuées soient celles par défaut.
+
+* 'clock rate 64000' pour mettre le cloack rate d'une interface serie à la valeur spécifiée.
+	il est configuré uniquement sur le DCE (Data Communication Equipment) et le routeur DTE(...Terminal...) se synchronise à cette fréquence.
+
+* ? : ensemble possibles des commandes  d'un position dans le terminal
+
+* Tabulation pour l'autocomplétion
+
+* teraterm, pouti-hyperterminal: exple d'émulateur de terminal
+
+* Une adresse de passerelle par défaut correspond à une adresse vers laquelle tout le traffic en dehors du réseau (en destination d'une destination hors du réseau local) est redirigé. 
+
+* Par convention la 1ere adresse utilisable du réseau est reservée comme passerelle par défaut. Toutefois cela n'empeche pas l'administrateur de choisir une autre adresse par défaut.
+
+* show ip route: table de routage du routeur : différents réseaux dont il a connaissance et des différents chelmins qu'il connait pour atteindre ces réseaux
+
+* On a les routages statiques et dynamiques
+
+* show ip route (pour avoir la table de routage) (en mode enable)
+
+* ip route [ip_reseau port] [mask] [port]: pour ajouter un chemin vers un nouveau réseau (en mode configure terminal)
+
+
