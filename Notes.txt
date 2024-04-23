@@ -83,6 +83,8 @@
 
 * Lorsque vous configurez des noms de DNS, respectez la règle d’or suivante : ne mettez pas de caractères spéciaux, de majuscules ou d’espaces dans le nom de vos machines. Cela vous évitera bien des problèmes ! Vous pouvez consulter la norme officielle en anglais pour en savoir plus !
 
+* arp -a: pour connaitre les machines avec lesquelles on est en réseau
+
 *** Initiation à Packet Tracer ***
 
 * enable/disable sur IOS (de Packet Tracer) pour basculer entre les modes utilisateurs et superutilisateurs.
@@ -112,5 +114,14 @@
 * show ip route (pour avoir la table de routage) (en mode enable)
 
 * ip route [ip_reseau port] [mask] [port]: pour ajouter un chemin vers un nouveau réseau (en mode configure terminal)
+
+
+*** Configuration d'un équipement sans fil ***
+
+* On va chercher ici un equipement sans fil 3 en 1 (Point Accés, Commutateur, Routeur). 
+
+* Pour avoir l'IP d'un modem/routeur-wireless par défaut, il faut connexter l'appareil sur une machine, et regarder l'adresse de la passerelle par défaut dans les paramètres IP de la machine : c'est ce qu'on cherche
+
+* WirelessPC 300 N (WPC300N) : carte sans fil sur un laptop. Pour la placer, il faut d'abord éteindre la machine et la rallumer après
 
 
